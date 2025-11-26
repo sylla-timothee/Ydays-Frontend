@@ -1,4 +1,4 @@
-package com.example.ydays_flutter
+package com.example.ydays-frontend
 
 import io.flutter.embedding.android.FlutterActivity
 
