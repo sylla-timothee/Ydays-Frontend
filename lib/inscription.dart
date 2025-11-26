@@ -79,12 +79,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
               const SizedBox(height: 10),
 
               // ---------- Nom d'utilisateur ----------
-              const Text("Nom d’utilisateur"),
+
               TextFormField(
                 controller: _usernameController,
                 maxLength: 25,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+                    labelText: 'Nom d\'utilisateur',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person)
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -100,7 +102,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
               const SizedBox(height: 20),
 
               // ---------- Mot de passe ----------
-              const Text("Mot de passe"),
+
               Listener(
                 onPointerDown: (_) => setState(() => _showPassword = true),
                 onPointerUp: (_) => setState(() => _showPassword = false),
@@ -109,8 +111,11 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   obscureText: !_showPassword,
                   maxLength: 50,
                   decoration: InputDecoration(
+                    labelText: 'Mot de passe',
                     border: const OutlineInputBorder(),
                     suffixIcon: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    prefixIcon: Icon(Icons.person)
+
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -124,7 +129,6 @@ class _InscriptionPageState extends State<InscriptionPage> {
               const SizedBox(height: 20),
 
               // ---------- Confirmation de mot de passe ----------
-              const Text("Confirmer le mot de passe"),
               Listener(
                 onPointerDown: (_) => setState(() => _showConfirmPassword = true),
                 onPointerUp: (_) => setState(() => _showConfirmPassword = false),
@@ -135,6 +139,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                     suffixIcon: Icon(_showConfirmPassword ? Icons.visibility : Icons.visibility_off),
+                    prefixIcon: Icon(Icons.person),
+                    labelText: 'Confirmer le mot de passe',
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
