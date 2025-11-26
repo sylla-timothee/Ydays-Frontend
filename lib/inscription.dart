@@ -66,15 +66,21 @@ class _InscriptionPageState extends State<InscriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Inscription")),
-
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+      body: Center( child : SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
+              const Text(
+                  'Inscription',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+
+ 
 
               const SizedBox(height: 10),
 
@@ -179,17 +185,21 @@ class _InscriptionPageState extends State<InscriptionPage> {
               const SizedBox(height: 20),
 
               // ---------- Bouton de redirection connexion ----------
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () => Navigator.pushNamed(context, "/login"),
-                  child: const Text("Connexion"),
-                ),
-              ),
+              TextButton(
+                onPressed: () {
+                  // Redirection vers la page de connexion
+                  print ("Redirection vers la page de connexion");
+                },
+                child: Text("Déjà un compte ? Connectez-vous ici.",
+                  style: TextStyle(decoration: TextDecoration.underline)
+                ),  
+              ),            
             ],
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
+}
+
